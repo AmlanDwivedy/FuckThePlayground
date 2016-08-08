@@ -1,0 +1,28 @@
+apply plugin: 'com.android.library'
+//apply plugin: 'com.novoda.bintray-release'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.0"
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 24
+
+        versionCode 1
+        versionName "1.0"
+
+        consumerProguardFiles 'proguard-rules.txt'
+
+        ndk {
+            moduleName "gpuimage-library"
+            stl "gnustl_shared"
+            abiFilters "all"
+            ldLibs "log"
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+}
